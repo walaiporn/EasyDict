@@ -2,8 +2,12 @@ package rct.jindaret.walaiporn.easydict;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,7 +33,53 @@ public class MainActivity extends AppCompatActivity {
             myAlert.myDialog();
         } else {
             // No Space
-        }
+
+            try {
+
+                boolean b = true;
+                String strResult = null;
+                SynWord synWord = new SynWord(MainActivity.this);
+                synWord.execute();
+                String s = synWord.get();
+
+                Log.d("5decV1", "JSON ==> " + s);
+
+
+                JSONArray jsonArray = new JSONArray(s);
+
+                Log.d("5decV2", "JSONlength ==> " + jsonArray.length());
+
+                for (int i=0;i<jsonArray.length();i++) {
+
+                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+
+                    if (searchString.equals(jsonObject.getString("Word"))) {
+                        b = false;
+                        strResult = jsonObject.getString("Detail");
+                    }
+
+                }   // for
+
+                if (b) {
+                    MyAlert myAlert = new MyAlert(MainActivity.this, "Word False", "No this Word in my Database");
+                    myAlert.myDialog();
+                } else {
+                    MyAlert myAlert = new MyAlert(MainActivity.this, searchString, "หมายถึง " + strResult);
+                    myAlert.myDialog();
+                }
+
+                synWord.cancel(true);
+
+
+
+            } catch (Exception e) {
+                Log.d("5devV1", "e search ==>" + e.toString());
+            }
+
+
+
+
+        }   // if
 
     }   // clickSearch
 
