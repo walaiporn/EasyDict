@@ -22,22 +22,25 @@
         android:scrollbarThumbHorizontal="@drawable/bg7"
         android:scrollbarThumbVertical="@drawable/bg7" />
 
+    <Button
+        android:text="Search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickSearch"
+        android:id="@+id/button"
+        android:layout_alignParentBottom="true" />
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/editText"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/imageView"
         android:hint="@string/search"
         android:textColor="?attr/colorButtonNormal"
-        android:textColorLink="@color/colorAccent" />
-
-    <Button
-        android:text="Search"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/button"
-        android:layout_alignParentBottom="true" />
+        android:textColorLink="@color/colorAccent"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:textColorHint="@android:color/white"
+        android:layout_marginTop="20dp" />
 </RelativeLayout>
