@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (searchString.equals("")) {
             //Have Space
-            MyAlert myAlert = new MyAlert(MainActivity.this, "Have Space", "Please Fill All");
+            MyAlert myAlert = new MyAlert(MainActivity.this, "มีช่องว่าง", "กรุณากรอกทุกช่อง");
             myAlert.myDialog();
         } else {
             // No Space
