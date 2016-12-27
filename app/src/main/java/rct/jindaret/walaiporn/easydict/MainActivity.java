@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 }   // for
 
                 if (b) {
-                    MyAlert myAlert = new MyAlert(MainActivity.this, "Word False", "No this Word in my Database");
+                    MyAlert myAlert = new MyAlert(MainActivity.this, "ความหมาย", "ไม่พบคำที่คุณค้นหา");
                     myAlert.myDialog();
                 } else {
                     MyAlert myAlert = new MyAlert(MainActivity.this, searchString, "หมายถึง " + strResult);

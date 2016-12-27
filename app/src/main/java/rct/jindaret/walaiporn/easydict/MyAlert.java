@@ -23,7 +23,7 @@ public class MyAlert {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setCancelable(false);
-        builder.setIcon(R.drawable.doremon48);
+        builder.setIcon(R.drawable.y1);
         builder.setTitle(titleString);
         builder.setMessage(messageString);
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
